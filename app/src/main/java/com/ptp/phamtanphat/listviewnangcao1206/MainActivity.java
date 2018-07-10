@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         monanArrayList.add(new Monan("Mi Han Quoc",65000,R.drawable.monmihanquoc));
         monanArrayList.add(new Monan("Sushi",30000,R.drawable.monsushi));
 
+
         monanAdapter = new MonanAdapter(MainActivity.this,R.layout.dong_item_monan,monanArrayList);
         lvMonan.setAdapter(monanAdapter);
     }
