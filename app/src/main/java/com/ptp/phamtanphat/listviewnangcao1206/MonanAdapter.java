@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -49,7 +51,17 @@ public class MonanAdapter extends BaseAdapter{
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         //convertView se la con tro cho moi layoutnhanban
         convertView = layoutInflater.inflate(layout,null);
+
+        TextView txtTen = convertView.findViewById(R.id.textviewtenMoan);
+        TextView txtGia = convertView.findViewById(R.id.textviewgiaMoan);
+        ImageView img = convertView.findViewById(R.id.imageviewMonan);
+
+        Monan monan = (Monan) getItem(position);
+
+        txtTen.setText(monan.getTen());
+        txtGia.setText(monan.getGia() + " Dong");
+        img.setImageResource(monan.getHinhanh());
         //
-        return null;
+        return convertView;
     }
 }
